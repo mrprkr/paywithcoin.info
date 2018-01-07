@@ -1,4 +1,5 @@
 {
+	"_id": "5",
 	"name": "G2A",
 	"supportedCoins": ["BTC"],
 	"url": "https://www.g2a.com",

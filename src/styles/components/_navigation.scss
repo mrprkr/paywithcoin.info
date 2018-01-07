@@ -3,4 +3,18 @@ nav {
 	padding-bottom: 2rem;
 	margin-bottom: 2rem;
 	border-bottom: 1px solid #efefef;
+	.beta {
+		float: right;
+		margin-top: 1rem;
+		color: rgb(249, 42, 154);
+	}
+	.logo {
+		color: #777;
+		text-decoration: none;
+		font-size: 3rem;
+		font-weight: 300;
+		.with {
+			color: rgb(10, 208, 190);
+		}
+	}
 }

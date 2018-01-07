@@ -2,10 +2,12 @@ extends ../layouts/default
 
 block nav
 block header
+block footer
 block main
 	.container
-		h1 Opps... that's an error
-		if error.code
-			h3= error.message
-			p code #{error.code}
-		a(href="/") Home
+		.u-m4.u-center
+			h1 Opps... that's an error
+			if error && error.code
+				h3= error.message
+				p code #{error.code}
+			a(href="/") Home

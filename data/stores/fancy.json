@@ -1,4 +1,5 @@
 {
+	"_id": "4",
 	"name": "Fancy",
 	"supportedCoins": ["BTC"],
 	"url": "http://fancy.com",

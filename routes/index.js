@@ -7,8 +7,8 @@ module.exports = (app) => {
 
   // Index view
 	app.get('/', views.index);
-	app.get('/:coin', views.shopListing);
-	app.get('/:coin/:store', views.shopProfile);
-
+	app.get('/coin/:coin', views.shopListing);
+	app.get('/store/:store', views.shopProfile);
+	app.get('/submit', views.submit);
 	app.get('*', (req, res) => res.render('error'));
 }

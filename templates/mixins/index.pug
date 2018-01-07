@@ -1,6 +1,15 @@
 mixin coinListing(coin)
-	a(href=`/${coin.marketCode}/` class='coin-listing u-p1 u-m1')&attributes(attributes)
-			img(src=coin.image.url alt=coin.image.alt)
-			h4= coin.name 
-				span.market-code &nbsp;(#{coin.marketCode})
-				block
+	a(href=`/coin/${coin.marketCode}/` class='coin-listing u-p1 u-m1')&attributes(attributes)
+		img(src=coin.image.url alt=coin.image.alt)
+		h4= coin.name 
+			span.market-code &nbsp;(#{coin.marketCode})
+			block
+
+mixin storeListing(store)
+	a(href=`/store/${store._id}` class="store-listing u-m1")&attributes(attributes)
+		.image-container.u-p1
+			if store.image && store.image.url
+				img(src=store.image.url alt=store.image.alt)
+		.text-container.u-p1
+			h4= store.name
+			p= store.description

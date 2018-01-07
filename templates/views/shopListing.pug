@@ -1,17 +1,25 @@
 extends ../layouts/default
 
 block main
-	.container
-		
-		img(src=data.coin.image.url height='80')
-		
-	
-		if data.stores.length
-			h1 Great stores to spend your #{data.coin.name}
-			for store in data.stores
-				if store.image.url
-					img(src=store.image.url alt=store.image.alt height="32")
-				p= store.name
-		else
-			h1 We coulnd't find anywhere that accepts #{data.coin.name} just yet
-			p If you know any please <a href=""> submit them </a>
+	.container.u-mt2
+		.coin-overview.u-mb4
+			img(src=data.coin.image.url height='60' class="u-mr2")
+			h1= data.coin.name
+		.store-listing-container
+			.shop-list
+				if data.stores.length
+					h4 Great stores to spend your #{data.coin.name}
+					hr
+					for store in data.stores
+						+storeListing(store)
+						//- if store.image.url
+						//- 	img(src=store.image.url alt=store.image.alt height="32")
+						//- p= store.name
+				else
+					h3 We couldn't find anywhere that accepts #{data.coin.name} just yet
+					p If you know any please <a href="/submit"> submit them </a>
+			
+			//- .coin-profile
+				h5 Coin Profile
+				p Market Code: #{data.coin.marketCode}
+				p= data.coin.description

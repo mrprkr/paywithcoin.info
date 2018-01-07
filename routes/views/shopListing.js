@@ -38,7 +38,7 @@ module.exports = (req, res) => {
 		// console.log('supported stores: ', stores);
 
 		let locals = res.locals;
-		locals.page.title = `Pay with coin | ${coin.name}`;
+		locals.page.title = `Pay With Coin | ${coin.name}`;
 
     // Bind the coin and supported stores to the page locals
 		locals.data = {

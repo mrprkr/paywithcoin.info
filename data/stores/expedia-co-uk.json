@@ -1,4 +1,5 @@
 {
+	"_id": "3",
 	"name": "Expedia",
 	"supportedCoins": ["BTC"],
 	"url": "www.expedia.co.uk",

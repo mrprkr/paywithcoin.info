@@ -1,0 +1,29 @@
+.store-listing-container {
+	display: grid;
+	grid-template-columns: 70% 1fr;
+	justify-items: stretch;
+	align-items: start;
+	grid-gap: 2rem;
+}
+
+
+.store-listing {
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	.image-container {
+		flex: 0;
+		img {
+			width: 120px;
+		}
+	}
+	.text-container {
+		flex: 1;
+		h4 {
+			padding-bottom: 0px;
+			margin-bottom: 0px;
+		}
+	}
+
+		// box-shadow: 0 0 4px 0 rgba(164,164,164,0.50);
+}

@@ -1,11 +1,10 @@
 extends ../layouts/default
 
 block main
-	.container
-		
+	.container.u-mt4.u-pb4
 		.row
 			if data && data.coins
-				h4.u-center Browse marketplaces by coin:
+				h4.u-center Find great marketplaces to use your:
 				.coin-listing-container
 					for coin in data.coins
 							+coinListing(coin).pad2

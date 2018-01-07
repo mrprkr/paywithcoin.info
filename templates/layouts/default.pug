@@ -4,15 +4,17 @@ doctype
 html(lang='en')
 	head
 		meta(charset="utf-8")
-		title= page.title || 'Pay with coin'
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		title= page.title || 'Pay With Coin'
 		block styles
 			link(rel="stylesheet" href="/css/stylesheet.css")
 	body
 		block nav
 			.container
 				nav
-					a(href='/'): h2 PayWithCoin
-					.u-right BETA
+					.beta: p ALPHA
+					a(href='/').logo Pay<span class="with">With</span>Coin
+					
 				
 		block header
 			
@@ -27,10 +29,11 @@ html(lang='en')
 					
 						.four.columns
 							h4 Contribute:
+							a(href='/submit'): button Submit a coin or marketplace
 							a(href='https://github.com/mrprkr/paywithcoin.info/' target='_blank')
 								button
-									img(src='/images/site/github.png' height='32') 
-									span GitHub
+									//- img(src='/images/site/github.png' height='32') 
+									span Fork on GitHub
 						.four.columns
 							h4 Donate:
 							p Your dontations support the maintenance and running costs of this site, every 0.0...1 of coin helps.
