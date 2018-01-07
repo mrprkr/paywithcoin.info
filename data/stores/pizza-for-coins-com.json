@@ -1,6 +1,6 @@
 {
 	"name": "Pizza for Coins",
-	"supportedCoins": ["BTC", "ETH", "LTC"],
+	"supportedCoins": ["BTC", "ETH", "LTC", "BCH"],
 	"url": "http://pizzaforcoins.com",
 	"image": {
 		"url": "",

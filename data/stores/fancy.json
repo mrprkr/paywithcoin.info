@@ -1,0 +1,13 @@
+{
+	"name": "Fancy",
+	"supportedCoins": ["BTC"],
+	"url": "http://fancy.com",
+	"image": {
+		"url": "https://upload.wikimedia.org/wikipedia/en/0/06/Fancy.com_logo_2016.png",
+		"alt": "Fancy logo"
+	},
+	"description": "Discover amazing stuff, collect the things you love, buy it all in one place.",
+	"_createdAt": "",
+	"_createdBy": "@mrprkr",
+	"published": true
+}

@@ -1,0 +1,13 @@
+{
+	"name": "Bitify",
+	"supportedCoins": ["BTC", "LTC"],
+	"url": "http://bitify.com",
+	"image": {
+		"url": "https://bitify.com/wp-content/uploads/2016/11/logo_bitify.png",
+		"alt": "bitify logo"
+	},
+	"description": "Bitify is a website where you can do auction, sell and buy various item for the smallest of price for your pleasure",
+	"_createdAt": "",
+	"_createdBy": "@mrprkr",
+	"published": true
+}

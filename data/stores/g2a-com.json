@@ -1,0 +1,13 @@
+{
+	"name": "G2A",
+	"supportedCoins": ["BTC"],
+	"url": "https://www.g2a.com",
+	"image": {
+		"url": "/images/stores/g2a.png",
+		"alt": "G2A logo"
+	},
+	"description": "Enjoy the vast offer of Steam, Origin, Uplay, Battle.net, GOG, PSN and XBOX CD-Keys at the most attractive prices on the market. Don’t overpay – buy cheap on G2A.COM!",
+	"_createdAt": "",
+	"_createdBy": "@mrprkr",
+	"published": true
+}

@@ -1,0 +1,13 @@
+{
+	"name": "4chan",
+	"supportedCoins": ["BTC"],
+	"url": "http://4chan.com",
+	"image": {
+		"url": "http://img.2ch.sc/img/4_0217.png",
+		"alt": "4chan logo"
+	},
+	"description": "4chan is a simple image-based bulletin board where anyone can post comments and share images. There are boards dedicated to a variety of topics, from Japanese animation and culture to videogames, music, and photography. Users do not need to register an account before participating in the community. Feel free to click on a board below that interests you and jump right in!",
+	"_createdAt": "",
+	"_createdBy": "@mrprkr",
+	"published": true
+}
