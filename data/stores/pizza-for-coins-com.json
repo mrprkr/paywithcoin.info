@@ -1,0 +1,14 @@
+{
+	"name": "Pizza for Coins",
+	"supportedCoins": ["BTC", "ETH", "LTC"],
+	"url": "http://pizzaforcoins.com",
+	"image": {
+		"url": "",
+		"alt": "Pizza for coins Logo"
+	},
+	"description": "Order a pizza, pay in bitcoins, and have delivered to your door quickly and efficiently.",
+	"_createdAt": "",
+	"_createdBy": "@mrprkr",
+	"published": true
+
+}

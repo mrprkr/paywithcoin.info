@@ -1,0 +1,6 @@
+mixin coinListing(coin)
+	a(href=`/${coin.marketCode}/` class='coin-listing u-p1 u-m1')&attributes(attributes)
+			img(src=coin.image.url alt=coin.image.alt)
+			h4= coin.name 
+				span.market-code &nbsp;(#{coin.marketCode})
+				block

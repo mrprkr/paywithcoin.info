@@ -6,11 +6,12 @@ block main
 		.row
 			if data && data.coins
 				h4.u-center Browse marketplaces by coin:
-				ul
+				.coin-listing-container
 					for coin in data.coins
-						.three.columns
-							a(href=`/${coin.marketCode}/`)
-								img(src=coin.image.url alt=coin.image.alt height='80')
-								h4 #{coin.name} 
-									span(class="small") (#{coin.marketCode})
+							+coinListing(coin).pad2
+							
+							//- a(href=`/${coin.marketCode}/`)
+							//- 	img(src=coin.image.url alt=coin.image.alt height='80')
+							//- 	h4 #{coin.name} 
+							//- 		span(class="small") (#{coin.marketCode})
 								//- p= coin.description

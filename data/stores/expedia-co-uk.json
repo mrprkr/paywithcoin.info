@@ -1,0 +1,13 @@
+{
+	"name": "Expedia",
+	"supportedCoins": ["BTC"],
+	"url": "www.expedia.co.uk",
+	"image": {
+		"url": "//www.expedia.co.uk/_dms/header/logo.svg",
+		"alt": "Expedia Logo"
+	},
+	"description": "Great cheap flights, car and hotel deals. Find your perfect holiday or city break and save now on your next trip.",
+	"_createdAt": "",
+	"_createdBy": "@mrprkr",
+	"published": true
+}

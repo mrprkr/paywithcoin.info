@@ -1,0 +1,34 @@
+.coin-listing-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	@media screen and (max-width: $screen-lg-max){
+		grid-template-columns: 1fr 1fr;
+	}
+	@media screen and (max-width: $screen-sm-max){
+		grid-template-columns: 1fr;
+	}
+	grid-gap: 1rem;
+	justify-items: stretch;
+	align-items: start;
+}
+
+.coin-listing {
+	text-decoration: none;
+	color: inherit;
+	border: 1px solid #ccc;
+	transition: transform 0.3s;
+	img {
+		height: 60px;
+	}
+	h4 {
+		.market-code {
+			font-size: 0.6em;
+		}
+	}
+	&:hover {
+		transform: scale(1.025);
+		transition: transform 0.3s;
+		color: inherit;
+		// box-shadow: 0 0 4px 0 rgba(164,164,164,0.50);
+	}
+}
