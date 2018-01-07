@@ -1,0 +1,19 @@
+{
+  "name": "paywithcoin.info",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "connect": "^3.6.5",
+    "express": "^4.16.2",
+    "node-sass-middleware": "^0.11.0",
+    "pug": "^2.0.0-rc.4",
+    "requiredir": "^1.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mrprkr",
+  "license": "MIT"
+}

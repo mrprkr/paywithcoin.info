@@ -1,0 +1,9 @@
+extends ../layouts/default
+
+block nav
+block header
+block main
+	h1 Opps... that's an error
+	if error.code
+		h3= error.code
+	a(href="/") Home
