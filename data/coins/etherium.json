@@ -1,0 +1,9 @@
+{
+	"name": "Ethereum",
+	"description": "",
+	"marketCode": "ETH",
+	"image": {
+		"alt": "Ethereum logo",
+		"url": "/images/coins/ethereum.png"
+	}
+}

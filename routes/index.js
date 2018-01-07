@@ -6,10 +6,9 @@ module.exports = (app) => {
 	app.use(middleware.initLocals);
 
   // Index view
-	app.get('/', (req, res) => {
-		res.render('index');
-	});
-
+	app.get('/', views.index);
 	app.get('/:coin', views.shopListing);
 	app.get('/:coin/:store', views.shopProfile);
+
+	app.get('*', (req, res) => res.render('error'));
 }

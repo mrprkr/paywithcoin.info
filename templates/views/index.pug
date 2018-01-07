@@ -2,5 +2,15 @@ extends ../layouts/default
 
 block main
 	.container
+		
 		.row
-			h1 Home page here
+			if data && data.coins
+				h4.u-center Browse marketplaces by coin:
+				ul
+					for coin in data.coins
+						.three.columns
+							a(href=`/${coin.marketCode}/`)
+								img(src=coin.image.url alt=coin.image.alt height='80')
+								h4 #{coin.name} 
+									span(class="small") (#{coin.marketCode})
+								//- p= coin.description

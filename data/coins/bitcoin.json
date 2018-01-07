@@ -1,0 +1,9 @@
+{
+	"name": "Bitcoin",
+	"description": "The original and defacto cryptocurrency",
+	"marketCode": "BTC",
+	"image": {
+		"alt": "Bitcoin logo",
+		"url": "/images/coins/bitcoin.png"
+	}
+}

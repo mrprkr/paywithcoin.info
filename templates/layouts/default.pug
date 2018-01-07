@@ -11,11 +11,32 @@ html(lang='en')
 		block nav
 			.container
 				nav
-					ul
-						li: a(href='/') Home
-						li: a(href='/examplecoin') Example coin
-						li: a(href='/examplecoin/store') Example store
+					a(href='/'): h2 PayWithCoin
+				
 		block header
+			
 		block main
+			
 		block footer
+			footer
+				.container
+					.row
+						.four.columns
+							h4 Contact:
+					
+						.four.columns
+							h4 Contribute:
+							a(href='https://github.com/mrprkr/paywithcoin.info/' target='_blank')
+								button
+									img(src='/images/site/github.png' height='32') 
+									span GitHub
+						.four.columns
+							h4 Donate:
+							p Your dontations support the maintenance and running costs of this site
+							ul
+								li BTC: Bitcoin address
+								li LTC: Litecoin address
+								li ETH: Ethereum address
+								li XRP: Ripple address
+
 		block js

@@ -1,0 +1,9 @@
+{
+	"name": "Litecoin",
+	"description": "A newer coin aimed towards quicker transactions and lower fees",
+	"marketCode": "LTC",
+	"image": {
+		"alt": "Litecoin logo",
+		"url": "/images/coins/litecoin.png"
+	}
+}

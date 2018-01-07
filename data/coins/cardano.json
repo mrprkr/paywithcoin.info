@@ -1,0 +1,9 @@
+{
+	"name": "Cardano",
+	"description": "",
+	"marketCode": "ADA",
+	"image": {
+		"alt": "Cardano logo",
+		"url": "/images/coins/cardano.png"
+	}
+}

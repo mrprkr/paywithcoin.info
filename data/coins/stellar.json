@@ -1,0 +1,9 @@
+{
+	"name": "Stellar",
+	"description": "",
+	"marketCode": "XLM",
+	"image": {
+		"alt": "Stellar logo",
+		"url": "/images/coins/stellar.png"
+	}
+}

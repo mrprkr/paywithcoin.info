@@ -1,0 +1,2 @@
+For later use when migrating to a database.
+For now add info to /data

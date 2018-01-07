@@ -1,0 +1,9 @@
+{
+	"name": "Tron",
+	"description": "",
+	"marketCode": "TRX",
+	"image": {
+		"alt": "Tron logo",
+		"url": "/images/coins/tron.png"
+	}
+}

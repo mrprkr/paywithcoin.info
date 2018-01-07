@@ -1,0 +1,9 @@
+{
+	"name": "Ripple",
+	"description": "",
+	"marketCode": "XRP",
+	"image": {
+		"alt": "Ripple logo",
+		"url": "/images/coins/ripple.png"
+	}
+}

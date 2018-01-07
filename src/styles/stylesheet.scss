@@ -1,6 +1,24 @@
 @import '_normalize';
 @import '_skeleton';
+@import '_utility';
 
 * {
 
+}
+
+.small {
+	font-size: 0.6em;
+}
+
+nav {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid #efefef;
+}
+footer {
+	margin-top: 4rem;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	border-top: 1px solid #ccc;
 }

@@ -1,0 +1,9 @@
+{
+	"name": "RaiBlocks",
+	"description": "",
+	"marketCode": "XRB",
+	"image": {
+		"alt": "RaiBlocks logo",
+		"url": "/images/coins/raiBlocks.png"
+	}
+}
