@@ -8,7 +8,7 @@ block main
 		.store-listing-container
 			.shop-list
 				if data.stores.length
-					h4 Great stores to spend your #{data.coin.name}
+					h4 Great places to use your #{data.coin.name}
 					hr
 					for store in data.stores
 						+storeListing(store)

@@ -2,12 +2,12 @@ extends ../layouts/default
 
 block main
 	.container.u-mt2
-		.coin-overview.u-mb4
-			h1 Stores
+		.coin-overview
+			h1.u-mb0 Stores
 		.store-listing-container
 			.shop-list
 				if data.stores.length
-					h4 Great places to spend your coins
+					h4 Now accepting cryptocurrency
 					hr
 					for store in data.stores
 						+storeListing(store)
