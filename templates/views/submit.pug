@@ -1,14 +1,33 @@
 extends ../layouts/default
 block main
 	.container
-		h1 Submit a new coin or marketplace
-		p If you know of somewhere accepting cryptocurrency please submit it. 
+		h1 Submit a new store
+		p Help build the best collection of places to use crypto.
+		
 		if data.alert 
 			p.u-p2= data.alert.message
-		form(action="/submit" method="POST")
-			label Store Name
-			input(type="text" name="name" placeholder="Example Store")
-			label Store Website
-			input(type="text" name="url" placeholder="http://cryptomarketplace.com")
-			br
-			button(role="submit") Submit
+			a(href="/submit"): button Submit new
+			
+		else
+			form(action="/submit" method="POST" autocomplete="off")
+				label Store Name
+				input(type="text" name="name" placeholder="Example Store")
+				label Store Website
+				input(type="text" name="url" placeholder="http://cryptomarketplace.com")
+				br
+				label Accepted Coins
+				select(class="control-group" id="select-coin" name="coins" multiple="")
+					option(value="") Select coins
+					for coin in data.coins
+						option(value=coin._id)= coin.name
+				br
+				button(role="submit") Submit
+
+append styles
+	//- link(rel="stylesheet" type="text/css" href="/js/semantic.css")
+
+append js
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+	script(src="/js/selectize.js")
+	script.
+		$('#select-coin').selectize();

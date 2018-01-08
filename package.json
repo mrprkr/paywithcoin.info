@@ -11,6 +11,8 @@
     "open-graph-scraper": "^3.1.4",
     "pug": "^2.0.0-rc.4",
     "requiredir": "^1.0.7",
+    "selectize": "^0.12.4",
+    "semantic-ui": "^2.2.13",
     "underscore": "^1.8.3"
   },
   "devDependencies": {},

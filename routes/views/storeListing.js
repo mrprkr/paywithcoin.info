@@ -7,7 +7,7 @@ module.exports = (req, res) => {
 
 	locals.page.title = `Pay With Coin | Stores`;
 
-	Store.find().exec((err, stores) => {
+	Store.find().populate('coins').exec((err, stores) => {
 		if(err){
 			res.render('error', {error: {message:`The server could not find any stores`, code: 500}});
 		}

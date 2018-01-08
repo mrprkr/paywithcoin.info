@@ -48,7 +48,7 @@ exports.handleSubmitForm = (req, res) => {
 				res.render('submit');
 			} else {
 				// Get the metadata for the supplied URL
-				const options = {'url': req.body.url};
+				const options = {'url': req.body.url, 'timeout': 4000};
 				ogs(options)
 				.then(function (result) {
 					// Store the returned data
@@ -59,6 +59,10 @@ exports.handleSubmitForm = (req, res) => {
 					if(result.data.ogImage.url.match(isUrl)){
 						ogImage = result.data.ogImage.url;
 					}
+					console.log(req.body);
+          // Split the coins into an array
+					// Not sure if this is needed
+					const coins = Array.from(req.body.coins);
 
 					const newStore = new Store({
 						name: req.body.name,
@@ -66,6 +70,7 @@ exports.handleSubmitForm = (req, res) => {
 						description: result.data.ogDescription || '',
 						url: req.body.url,
 						twitter: result.data.twitterSite || '',
+						coins,
 						image: {
 							url: ogImage,
 							alt: req.body.name + ' logo'

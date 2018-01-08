@@ -12,4 +12,8 @@ mixin storeListing(store)
 				img(src=store.image.url alt=store.image.alt)
 		.text-container.u-p1
 			h4= store.name
+			p= store.verified ? 'Verified' : ''
+			ul.coins
+				for coin in store.coins
+					li= coin.name
 			p= store.description
