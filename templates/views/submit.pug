@@ -1,9 +1,11 @@
 extends ../layouts/default
 block main
-	.container
-		h1 Submit a store
-		p Help build the best collection of places to use crypto. Provide the Name, URL and what coins are accepted - we'll figure out the rest.
-		
+	.container.u-pt4
+		h1.u-mb2 Submit a store
+		h4.u-mb0 Help build the best collection of places to use crypto. 
+		p Provide the Name, URL and what coins are accepted - we'll figure out the rest.
+		hr
+			
 		if data.alert 
 			p.u-p2= data.alert.message
 			a(href="/submit"): button Submit new
@@ -13,7 +15,7 @@ block main
 				label Store Name
 				input(type="text" name="name" placeholder="Example Store")
 				label Store Website
-				input(type="text" name="url" placeholder="http://cryptomarketplace.com")
+				input(type="text" name="url" placeholder="cryptomarketplace.com")
 				br
 				label Accepted Coins
 				select(class="control-group" id="select-coin" name="coins" multiple="")
