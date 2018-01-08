@@ -7,14 +7,25 @@ The stylesheets are currently generated in middleware on request. the `/public/c
 
 ## Todo
 - style submit success/warning messages
-- Pagination on listing pages
-- Search
-- Search (with index)
-- Clean up navigation
-- Add donation addresses
-- Contact form/email
+- publish/verify/manage stores page
 
-- Verified / Approval
-- ReCaptcha
+- Pagination on listing pages
+- Clean up navigation
+- Responsive checks for each page
+
+- Contact form/email
+- ReCaptcha for submit form
+- Add donation addresses
 
 - Setup infrastructure
+
+
+Nice to have:
+- Store profile page
+- Donate address QR code on click
+
+V2:
+- Search
+- Search (with index)
+- tie in market caps for coins via API
+- sort the coins by stores available
