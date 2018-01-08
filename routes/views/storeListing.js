@@ -8,7 +8,8 @@ module.exports = (req, res) => {
 	locals.page.title = `Pay With Coin | Stores`;
 
 	Store.find()
-		.sort('-_createdAt')
+		.where({published: !req.query.unpublished})
+		.sort({verified: -1, _createdAt: -1})
 		.populate('coins')
 		.exec((err, stores) => {
 		if(err){
