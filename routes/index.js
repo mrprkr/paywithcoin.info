@@ -12,7 +12,9 @@ module.exports = (app) => {
 	app.get('/coin/:coin', views.coinListing);
 	app.get('/stores', views.storeListing);
 	app.get('/stores/:store', views.shopProfile);
-	app.get('/submit', views.submit);
+	app.get('/submit', views.submit.getSubmitPage);
+	app.post('/submit', views.submit.handleSubmitForm);
+
 
 	app.get('/api/og', api.getOgContent);
 	app.get('/api/addStoreByUrl', api.addStoreByUrl);

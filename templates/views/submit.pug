@@ -3,4 +3,12 @@ block main
 	.container
 		h1 Submit a new coin or marketplace
 		p If you know of somewhere accepting cryptocurrency please submit it. 
-		p TODO ADD FORM HERE
+		if data.alert 
+			p.u-p2= data.alert.message
+		form(action="/submit" method="POST")
+			label Store Name
+			input(type="text" name="name" placeholder="Example Store")
+			label Store Website
+			input(type="text" name="url" placeholder="http://cryptomarketplace.com")
+			br
+			button(role="submit") Submit

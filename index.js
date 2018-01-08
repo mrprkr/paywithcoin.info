@@ -2,9 +2,10 @@ const express = require('express');
 const pug = require('pug');
 const sassMiddleware = require('node-sass-middleware');
 const path = require('path');
+const bodyParser = require('body-parser');
 const app = express();
 const config = require('./config');
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 // Connect to the DB
 mongoose.connect(config.db.uri, { useMongoClient: true });
@@ -25,6 +26,11 @@ app.use(sassMiddleware({
     prefix:  '/css'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
 }));
 
+// Parse form data
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Server the public folder staticly
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Require models
