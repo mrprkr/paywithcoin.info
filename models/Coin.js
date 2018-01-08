@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 // Define the schema
 const CoinSchema = mongoose.Schema({
   name: String,
 	description: String,
+  marketCode: String,
 	url: String,
 	image: {
 		alt: String,
@@ -12,5 +14,5 @@ const CoinSchema = mongoose.Schema({
 });
 
 // Register and make it avaliable to the app
-const Store = mongoose.model('Coin', CoinSchema);
-module.exports = Store;
+const Coin = mongoose.model('Coin', CoinSchema);
+module.exports = Coin;

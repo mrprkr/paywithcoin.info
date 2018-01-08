@@ -1,0 +1,24 @@
+extends ../layouts/default
+
+block main
+	.container.u-mt2
+		.coin-overview.u-mb4
+			h1 Stores
+		.store-listing-container
+			.shop-list
+				if data.stores.length
+					h4 Great stores to spend your coins
+					hr
+					for store in data.stores
+						+storeListing(store)
+						//- if store.image.url
+						//- 	img(src=store.image.url alt=store.image.alt height="32")
+						//- p= store.name
+				else
+					h3 We couldn't find any stores just yet
+					p If you know any please <a href="/submit"> submit them </a>
+			
+			//- .coin-profile
+				h5 Coin Profile
+				p Market Code: #{data.coin.marketCode}
+				p= data.coin.description

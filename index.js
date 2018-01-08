@@ -4,6 +4,11 @@ const sassMiddleware = require('node-sass-middleware');
 const path = require('path');
 const app = express();
 const config = require('./config');
+var mongoose = require('mongoose');
+
+// Connect to the DB
+mongoose.connect(config.db.uri, { useMongoClient: true });
+mongoose.Promise = global.Promise;
 
 // Set application config
 app.set('view engine', 'pug');
@@ -21,6 +26,10 @@ app.use(sassMiddleware({
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Require models
+require('./models/Coin');
+require('./models/Store');
 
 // Require routes
 require('./routes/index')(app);

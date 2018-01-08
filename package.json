@@ -5,7 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.16.2",
+    "mongoose": "^4.13.9",
     "node-sass-middleware": "^0.11.0",
+    "open-graph-scraper": "^3.1.4",
     "pug": "^2.0.0-rc.4",
     "requiredir": "^1.0.7",
     "underscore": "^1.8.3"
