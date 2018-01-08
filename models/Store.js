@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 // Define the schema
 const StoreSchema = mongoose.Schema({
   name: String,
+  slug: String,
   title: String,
 	description: String,
 	url: String,

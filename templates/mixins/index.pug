@@ -6,14 +6,18 @@ mixin coinListing(coin)
 			block
 
 mixin storeListing(store)
-	a(href=`/store/${store._id}` class="store-listing u-m1")&attributes(attributes)
+	a(href=store.url target="_blank" class="store-listing u-m1")&attributes(attributes)
 		.image-container.u-p1
 			if store.image && store.image.url
 				img(src=store.image.url alt=store.image.alt)
 		.text-container.u-p1
 			h4= store.name
-			p= store.verified ? 'Verified' : ''
-			ul.coins
+			
+			ul.supported-coins
 				for coin in store.coins
-					li= coin.name
+					li
+						img(src=coin.image.url alt=coin.name height="16")
+				if store.verified
+					li.verified 
+						span Verified
 			p= store.description

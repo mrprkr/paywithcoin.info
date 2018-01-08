@@ -26,13 +26,13 @@ module.exports = (req, res) => {
 
 			locals.page.title = `Pay With Coin | ${coin.name}`;
 
-			Store.find({coins: coin._id}).exec((err, stores) => {
+			Store.find({coins: coin._id}).populate('coins').exec((err, stores) => {
 				if(err){
 					res.render('error', {error: {message:`The server could not find any stores`, code: 500}});
 				}
 
 				locals.data.stores = stores;
-				res.render('storeListing');
+				res.render('coinListing');
 			})
 		}
 	});
