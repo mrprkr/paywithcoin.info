@@ -27,19 +27,21 @@ Object.keys(listOfUpdates).forEach((element) => {
 			throw new Error(err);
 		}
 		else if (update){
+      // The update has already been applied
 			console.log(update.name + ' update already applied');
 		} else {
+      // We need to apply the update
 			console.log(`Applying update ${element}`);
 
-      // Find the model to use by the key
+      // Find the model by extracting the the key
 			Object.keys(listOfUpdates[element]).forEach((model) => {
-				// console.log('using model: ', model);
 
+        // Assign the model and list of documents to add
 				const Model = mongoose.model(model);
 				const parentModel = listOfUpdates[element];
 				const arrayOfDocs = parentModel[model];
 
-        // for each object supplied, save it
+        // For each document supplied, save it to the model
 				_.each(arrayOfDocs, (doc) => {
 					const newDoc = new Model(doc);
 					newDoc.save((err, savedDoc) => {
@@ -47,9 +49,9 @@ Object.keys(listOfUpdates).forEach((element) => {
 							console.error(err)
 						} else {
 							console.log(`Added new ${model}: ${savedDoc._id}`)
-	            // console.log('Added document: ', savedDoc);
 						}
 					});
+          // Once the array is over, consider the update applied
 					if(arrayOfDocs.indexOf(doc) + 1 == arrayOfDocs.length) {
 						// Then consider the updated applied and save it
 						const successfulUpdate = new Update({name: element});
