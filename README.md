@@ -7,6 +7,7 @@ The stylesheets are currently generated in middleware on request. the `/public/c
 
 ## Todo
 - OG tags for unfurling
+- Add favicon
 - Store images (to prevent CORS issues)
 - style submit success/warning messages
 - publish/verify/manage stores page

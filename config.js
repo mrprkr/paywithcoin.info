@@ -4,5 +4,8 @@ module.exports = {
 	},
 	db: {
 		uri: process.env.MONGODB_URI || 'mongodb://localhost/paywithcoin'
+	},
+	elasticsearch: {
+		url: process.env.BONSAI_URL || 'localhost:9200/paywithcoin'
 	}
 }
