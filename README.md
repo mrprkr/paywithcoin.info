@@ -29,3 +29,6 @@ V2:
 - Search (with index)
 - tie in market caps for coins via API
 - sort the coins by stores available
+
+- API keys
+- Store images
