@@ -2,13 +2,16 @@ extends ../layouts/default
 
 block main
 	.container.u-mt2
-		.coin-overview.u-mb4
+		.coin-overview.u-mb2
 			img(src=data.coin.image.url height='60' class="u-mr2")
-			h1= data.coin.name
+			h1.u-mb2 #{data.coin.name} (#{data.coin.marketCode})
+		//- hr
+				
 		.store-listing-container
 			.shop-list
 				if data.stores.length
-					h4 Great places to use your #{data.coin.name}
+					h4.u-mb0 Great places to use your #{data.coin.name}
+					p= data.coin.description
 					hr
 					for store in data.stores
 						+storeListing(store)
@@ -19,7 +22,23 @@ block main
 					h3 We couldn't find anywhere that accepts #{data.coin.name} just yet
 					p If you know somewhere, please <a href="/submit"> submit a store </a>
 			
-			//- .coin-profile
-				h5 Coin Profile
-				p Market Code: #{data.coin.marketCode}
-				p= data.coin.description
+			.coin-profile.u-pl4
+				//- h5 Coin Profile
+				if data.marketCap
+					if data.marketCap.market_cap_usd
+						h5.u-mb0 Market Cap
+						- var marketCapUSD = parseInt(data.marketCap.market_cap_usd).toFixed(2);
+						p $#{marketCapUSD}
+
+					h5.u-mb0.u-mt1 Value:
+					if data.marketCap.price_usd
+						- var priceUSD = parseInt(data.marketCap.price_usd).toFixed(2);
+						p.u-mb0 $#{priceUSD}
+					if data.marketCap.price_gbp
+						- var priceGBP = parseInt(data.marketCap.price_gbp).toFixed(2);
+						p.u-mb0 £#{priceGBP}
+					if data.marketCap.price_eur
+						- var priceEUR = parseInt(data.marketCap.price_eur).toFixed(2);
+						p.u-mb0 €#{priceEUR}
+					
+				

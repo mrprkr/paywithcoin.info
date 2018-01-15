@@ -3,9 +3,45 @@ const path = require('path');
 const requireDir = require('requiredir');
 const coins = requireDir(path.join(__dirname, '../../data/coins')).toArray();
 const mongoose = require('mongoose');
+const axios = require('axios');
 const Store = mongoose.model('Store');
 const Coin = mongoose.model('Coin');
 // const storeList = requireDir(path.join(__dirname, '../../data/stores')).toArray();
+
+
+// Get a list of stores
+const findStores = (id) =>  {
+	return new Promise((resolve, reject) => {
+		Store.find({coins: id})
+			.where({published: true})
+			.sort({verified: -1, _createdAt: -1})
+			.populate('coins')
+			.exec((err, stores) => {
+				if(err){
+					console.log(err);
+					reject(err);
+				}
+				resolve(stores)
+				// return stores;
+			});
+	})
+
+}
+
+// Get the market details
+const getCoinMarketDetails = (name) => {
+	return new Promise((resolve, reject) => {
+		axios.get(`https://api.coinmarketcap.com/v1/ticker/${name}/?convert=GBP`)
+			.then((response) => {
+				resolve(response.data[0]);
+			})
+			.catch((err) => {
+				console.error(err);
+				reject(err)
+			});
+	});
+}
+
 
 
 module.exports = (req, res) => {
@@ -26,18 +62,21 @@ module.exports = (req, res) => {
 
 			locals.page.title = `Pay With Coin | ${coin.name}`;
 
-			Store.find({coins: coin._id})
-			.where({published: true})
-			.sort({verified: -1, _createdAt: -1})
-			.populate('coins')
-			.exec((err, stores) => {
-				if(err){
-					res.render('error', {error: {message:`The server could not find any stores`, code: 500}});
-				}
 
-				locals.data.stores = stores;
-				res.render('coinListing');
-			})
+      // Async fetch data
+			const getData = async () => {
+				locals.data.stores = await findStores(coin._id);
+				locals.data.marketCap = await getCoinMarketDetails(coin.name);
+				console.log(locals.data);
+			}
+
+			getData()
+				.then(() => {
+					res.render('coinListing');
+				})
+				.catch((err) => {
+					res.render('error', {error: {message:`The server could not find any stores`, code: 500}});
+				});
 		}
 	});
 }
