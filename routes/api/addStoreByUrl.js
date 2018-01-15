@@ -20,6 +20,8 @@ module.exports = (req, res) => {
 						title: result.data.ogTitle || '',
 						description: result.data.ogDescription || '',
 						url: req.query.url,
+						published: true,
+						verified: false,
 						twitter: result.data.twitterSite || '',
 						image: {
 							url: result.data.ogImage.url || ''
