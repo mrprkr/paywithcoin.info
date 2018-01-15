@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const pug = require('pug');
 const sassMiddleware = require('node-sass-middleware');
