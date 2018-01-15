@@ -1,0 +1,51 @@
+extends ../layouts/default
+
+block main
+	.container.u-mt2
+		.coin-overview
+			h1.u-mb0 Manage Stores
+			
+		form(action="" method="POST")
+			label Published
+			select(name="published" )
+				option(value="") All
+				option(value="true" selected=data.appliedFilters.published) Published
+				option(value="false" selected=data.appliedFilters.published === 'false') Un-Published
+
+			label Verified
+			select(name="verified" )
+				option(value="") All
+				option(value="true" selected=data.appliedFilters.verified) Verified
+				option(value="false" selected=data.appliedFilters.verified === 'false') Un-Verified
+			
+			br
+			button(role="submit") submit
+		
+		hr
+			
+		if data.stores.length
+			table(style="width: 100%")
+				tr
+					th Thumb
+					th Name
+					th Url
+					th Published
+					th Verified
+				for store in data.stores
+					tr.u-p1
+						if store.image && store.image.url
+							td: img(src=store.image.url width="48")
+						else
+							td n/a
+						td= store.name
+						td: a(href=store.url target="_blank")= store.url
+						td= store.published
+						td= store.verified
+						
+						
+					
+					//- +storeListing(store)
+
+		else
+			h3 We couldn't find any stores just yet
+			p If you know any please <a href="/submit"> submit them </a>

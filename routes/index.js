@@ -16,6 +16,7 @@ module.exports = (app) => {
 	app.get('/submit', views.submit.getSubmitPage);
 	app.post('/submit', views.submit.handleSubmitForm);
 
+	app.get('/manage/stores', views.manageStores.renderStoreList);
 
 	app.get('/api/og', api.getOgContent);
 	app.get('/api/addStoreByUrl', api.addStoreByUrl);

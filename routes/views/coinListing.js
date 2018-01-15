@@ -36,8 +36,14 @@ const getCoinMarketDetails = (name) => {
 				resolve(response.data[0]);
 			})
 			.catch((err) => {
-				console.error(err);
-				reject(err)
+				if(err.code === 'ENOTFOUND'){
+					console.log('internet offline')
+					resolve(null)
+				} else {
+					console.error(err);
+					reject(err)
+				}
+
 			});
 	});
 }
@@ -67,7 +73,7 @@ module.exports = (req, res) => {
 			const getData = async () => {
 				locals.data.stores = await findStores(coin._id);
 				locals.data.marketCap = await getCoinMarketDetails(coin.name);
-				console.log(locals.data);
+				// console.log(locals.data);
 			}
 
 			getData()
