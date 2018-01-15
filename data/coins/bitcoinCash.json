@@ -2,6 +2,7 @@
 	"name": "Bitcoin Cash",
 	"description": "A fork of bitcoin",
 	"marketCode": "BCH",
+	"published": true,
 	"image": {
 		"alt": "Bitcoin Cash logo",
 		"url": "/images/coins/bitcoinCash.png"

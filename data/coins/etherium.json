@@ -2,6 +2,8 @@
 	"name": "Ethereum",
 	"description": "",
 	"marketCode": "ETH",
+	"published": true,
+	
 	"image": {
 		"alt": "Ethereum logo",
 		"url": "/images/coins/ethereum.png"

@@ -2,6 +2,8 @@
 	"name": "Ripple",
 	"description": "",
 	"marketCode": "XRP",
+	"published": true,
+	
 	"image": {
 		"alt": "Ripple logo",
 		"url": "/images/coins/ripple.png"

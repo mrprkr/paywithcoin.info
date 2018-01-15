@@ -2,6 +2,7 @@
 	"name": "Bitcoin",
 	"description": "The original and defacto cryptocurrency",
 	"marketCode": "BTC",
+	"published": true,
 	"image": {
 		"alt": "Bitcoin logo",
 		"url": "/images/coins/bitcoin.png"

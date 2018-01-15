@@ -1,5 +1,6 @@
-const views = require('requiredir')('./views');
-const api = require('requiredir')('./api');
+const path = require('path')
+const views = require('requiredir')(path.resolve(__dirname, './views'));
+const api = require('requiredir')(path.resolve(__dirname, './api'));
 
 const middleware = require('./middleware');
 

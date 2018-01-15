@@ -11,7 +11,7 @@ exports.getSubmitPage = (req, res) => {
 	let locals = res.locals;
 
   // Bind the coins to locals to help with the form submission
-	Coin.find().exec((err, coins) => {
+	Coin.find({published: true}).exec((err, coins) => {
 		if (err) throw new Error(err);
 		else {
 			locals.data = {

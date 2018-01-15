@@ -6,7 +6,7 @@ const Coin = mongoose.model('Coin');
 // const coins = requireDir(path.join(__dirname, '../../data/coins')).toArray();
 
 module.exports = (req, res) => {
-	Coin.find().exec((err, coins) => {
+	Coin.find({published: true}).exec((err, coins) => {
 		if(err) console.error(err);
 		else {
 			res.locals.data = {

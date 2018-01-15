@@ -13,7 +13,7 @@ module.exports = (req, res) => {
 	let locals = res.locals;
 
   // Find the coin in the DB
-	Coin.findOne({marketCode: req.params.coin}).exec((err, coin) => {
+	Coin.findOne({marketCode: req.params.coin, published: true}).exec((err, coin) => {
 		if(!coin || err) {
       // If none was found
 			res.render('error', {error: {message:`The coin ${req.params.coin} does not exist`, code: 404}});

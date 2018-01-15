@@ -14,7 +14,7 @@ mongoose.Promise = global.Promise;
 
 // Set application config
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'templates/views'));
+app.set('views', path.resolve(__dirname, './templates/views'));
 
 // Compile sass on-the-fly
 // TODO: migrate this to webpack if/when Javascript is needed
@@ -35,12 +35,13 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Require models
-require('./models/Coin');
-require('./models/Store');
+require('requiredir')('models');
 
 // Require routes
 require('./routes/index')(app);
 
+// Run the updater
+require('./updater');
 
 // Listen on specified port
 app.listen(config.app.port, () => {
