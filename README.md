@@ -6,6 +6,8 @@ This express application is a catch all directory listing of places to use crypt
 The stylesheets are currently generated in middleware on request. the `/public/css` folder is immutable and should not be modified, instead edit `/src/styles` and restart the app.
 
 ## Todo
+- OG tags for unfurling
+- Store images (to prevent CORS issues)
 - style submit success/warning messages
 - publish/verify/manage stores page
 
@@ -31,4 +33,3 @@ V2:
 - sort the coins by stores available
 
 - API keys
-- Store images

@@ -14,7 +14,7 @@ const StoreSchema = mongoose.Schema({
 		url: String
 	},
 	coins: [{ type: Schema.Types.ObjectId, ref: 'Coin' }],
-  published: { type: Boolean, default: false },
+  published: { type: Boolean },
   verified: { type: Boolean, default: false },
   _createdAt: {type: Date, default: Date.now()}
 });

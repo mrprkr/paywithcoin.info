@@ -3,7 +3,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const Update = mongoose.model('Update');
 
-// Only use these when running in isolation of index.js
+// ** Only need these when running in isolation of index.js**
 // require('requiredir')('./models');
 // const config = require('./config');
 // mongoose.connect(config.db.uri, { useMongoClient: true });
