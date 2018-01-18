@@ -1,13 +1,15 @@
 exports = module.exports;
 const mongoose = require('mongoose');
 const Store = mongoose.model('Store');
-
+const queryString = require('query-string');
 
 exports.redirectWithFilterParams = (req, res) => {
   // take the submitted form and turn it into url params;
 
-	let filterContext = {};
-	
+	let filterContext = queryString.stringify(req.body);
+	console.log(filterContext);
+	res.redirect(`/manage/stores?${filterContext}`);
+
 }
 
 exports.renderStoreList = (req, res) => {
@@ -21,6 +23,10 @@ exports.renderStoreList = (req, res) => {
 			if(req.query.published){
 				searchContext.published = req.query.published;
 				appliedFilters.published = req.query.published;
+			}
+			if(req.query.verified){
+				searchContext.verified = req.query.verified;
+				appliedFilters.verified = req.query.verified;
 			}
 
 			Store.find(searchContext)

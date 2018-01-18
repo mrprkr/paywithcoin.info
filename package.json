@@ -12,6 +12,7 @@
     "node-sass-middleware": "^0.11.0",
     "open-graph-scraper": "^3.1.4",
     "pug": "^2.0.0-rc.4",
+    "query-string": "^5.0.1",
     "requiredir": "^1.0.7",
     "selectize": "^0.12.4",
     "underscore": "^1.8.3"
